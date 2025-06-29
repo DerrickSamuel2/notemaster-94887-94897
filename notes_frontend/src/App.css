@@ -1,0 +1,128 @@
+/* CSS Variables for Theme Management */
+:root {
+  /* Light theme colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #282c34;
+  --text-secondary: #61dafb;
+  --border-color: #e9ecef;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+}
+
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #282c34;
+  --text-primary: #ffffff;
+  --text-secondary: #61dafb;
+  --border-color: #404040;
+  --button-bg: #0056b3;
+  --button-text: #ffffff;
+}
+
+/* Minimal, light-themed minimalist notes app */
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #23282d;
+  --text-secondary: #757575;
+  --border-color: #e9ecef;
+  --button-bg: #1976d2;
+  --button-text: #ffffff;
+  --sidebar-accent: #ffca28;
+  --sidebar-bg: #f9f9f9;
+}
+
+.notes-root {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  font-size: 17px;
+  background: #fff;
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Topbar */
+.notes-topbar {
+  z-index: 6;
+  user-select: none;
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
+/* Sidebar navigation */
+.notes-sidebar {
+  background: var(--sidebar-bg);
+  border-right: 1.5px solid var(--border-color);
+  box-sizing: border-box;
+  min-width: 180px;
+  width: 260px;
+  max-width: 400px;
+  transition: all 0.18s;
+}
+
+.notes-list {
+  margin: 0;
+  padding: 8px 0 16px 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+/* Main area (note editor) */
+.note-editor {
+  background: #fafcff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+  margin-top: 22px;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+button {
+  font-family: inherit;
+  transition: background 0.2s, color 0.2s, opacity 0.15s, box-shadow 0.2s;
+}
+button:disabled,
+button[disabled] {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+}
+
+input, textarea {
+  box-sizing: border-box;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px #1976d23a;
+}
+
+/* Misc states */
+::-webkit-input-placeholder { color: #aaa; }
+::-moz-placeholder { color: #aaa; }
+:-ms-input-placeholder { color: #aaa; }
+::placeholder { color: #aaa; }
+
+@media (max-width: 800px) {
+  .notes-root {
+    font-size: 15.5px;
+  }
+  .sidebar-toggle {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .note-editor {
+    margin: 1rem 0.1rem 1.5rem 0.1rem;
+    padding: 1.1rem .19rem .8rem .19rem !important;
+  }
+}
+
+/* Accessibility */
+button:focus {
+  outline: 3px solid #1976d2;
+  outline-offset: 1px;
+}
